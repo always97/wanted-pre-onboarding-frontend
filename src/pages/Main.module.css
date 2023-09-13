@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log {
+  display: flex;
+}
+
+.navBtn {
+  display: flex;
+  flex-direction: column;
+}
