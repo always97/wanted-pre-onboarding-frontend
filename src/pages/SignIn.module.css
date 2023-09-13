@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.email,
+.pwd {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
