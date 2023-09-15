@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputEmail,
+.inputPwd {
+  padding: 20px;
+}

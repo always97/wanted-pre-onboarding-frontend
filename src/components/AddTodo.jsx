@@ -10,6 +10,7 @@ const AddTodo = ({ onAddTodo }) => {
 
   const handleAdd = (e) => {
     e.preventDefault();
+    console.log(todoText, "<< 추가하러 보냄");
     onAddTodo(todoText);
     setTodoText(""); // 입력창 리셋
   };

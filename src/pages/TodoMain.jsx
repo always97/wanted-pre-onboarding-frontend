@@ -16,7 +16,8 @@ const TodoMain = () => {
   const access_token = localStorage.getItem("wanted_accessToken");
 
   const onAddTodo = (newTodoText) => {
-    addTodoAPI(newTodoText, access_token)
+    console.log(newTodoText, "<< 받았음 ");
+    addTodoAPI(access_token, newTodoText)
       .then((res) => {
         setTodoList([...todoList, res.data]);
       })

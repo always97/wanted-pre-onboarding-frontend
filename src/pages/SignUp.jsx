@@ -32,6 +32,7 @@ const SignUp = () => {
       })
       .catch((error) => {
         console.error("회원가입 오류:", error);
+        alert(error.response.data.message);
       });
   };
 
