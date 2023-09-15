@@ -19,8 +19,8 @@ const SignIn = () => {
     e.preventDefault();
 
     signInAPI(userInfo.email, userInfo.password)
-      .then((response) => {
-        const accessToken = response.data.access_token;
+      .then((res) => {
+        const accessToken = res.data.access_token;
         localStorage.setItem("wanted_accessToken", accessToken);
         navigate("/todo");
       })

@@ -1,0 +1,11 @@
+.todo {
+  padding: 5px;
+  display: flex;
+}
+
+.btnBox {
+  margin-left: 10px;
+  width: 7em;
+  display: flex;
+  justify-content: space-around;
+}

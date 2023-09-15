@@ -27,7 +27,7 @@ const SignUp = () => {
     e.preventDefault();
 
     signUpAPI(email, password)
-      .then((response) => {
+      .then((res) => {
         navigate("/signin");
       })
       .catch((error) => {
