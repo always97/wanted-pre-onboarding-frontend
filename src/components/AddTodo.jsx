@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import styles from "./AddTodo.module.css";
 
 const AddTodo = ({ onAddTodo }) => {
   const [todoText, setTodoText] = useState("");
@@ -10,20 +11,23 @@ const AddTodo = ({ onAddTodo }) => {
 
   const handleAdd = (e) => {
     e.preventDefault();
-    console.log(todoText, "<< 추가하러 보냄");
     onAddTodo(todoText);
     setTodoText(""); // 입력창 리셋
   };
 
   return (
-    <form onSubmit={handleAdd}>
+    <form className={styles.form} onSubmit={handleAdd}>
       <TextField
         variant="outlined"
         data-testid="new-todo-input"
         onChange={handleText}
         value={todoText}
       />
-      <Button type="submit" data-testid="new-todo-add-button">
+      <Button
+        variant="outlined"
+        type="submit"
+        data-testid="new-todo-add-button"
+      >
         추가
       </Button>
     </form>

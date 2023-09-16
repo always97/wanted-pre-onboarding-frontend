@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SignIn.module.css";
 import { signInAPI } from "../apis/apis";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, Card, TextField } from "@mui/material";
 
 const SignIn = () => {
   const [userInfo, setUserInfo] = useState({ email: null, password: null });
@@ -41,28 +41,28 @@ const SignIn = () => {
     <div className={styles.main}>
       <h2>로그인페이지</h2>
       <form onSubmit={handleLogin}>
-        <div className={styles.email}>
-          <label htmlFor="email">이메일</label>
-          <TextField
-            variant="outlined"
-            type="email"
-            id="email"
-            label="email을 입력해주세요"
-            data-testid="email-input"
-            onChange={handleInputEmail}
-          />
-        </div>
-        <div className={styles.pwd}>
-          <label htmlFor="password">비밀번호</label>
-          <TextField
-            id="Password"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-            data-testid="password-input"
-            onChange={handleInputPwd}
-          />
-        </div>
+        <Card>
+          <Box className={styles.email} sx={{ display: "flex", minWidth: 300 }}>
+            <TextField
+              variant="outlined"
+              type="email"
+              id="email"
+              label="email"
+              data-testid="email-input"
+              onChange={handleInputEmail}
+            />
+          </Box>
+          <Box className={styles.pwd}>
+            <TextField
+              id="Password"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              data-testid="password-input"
+              onChange={handleInputPwd}
+            />
+          </Box>
+        </Card>
         <Button variant="outlined" type="submit" data-testid="signin-button">
           로그인
         </Button>

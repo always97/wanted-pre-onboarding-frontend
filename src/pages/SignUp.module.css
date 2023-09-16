@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 5em;
@@ -10,7 +11,7 @@ form {
   flex-direction: column;
 }
 
-.inputEmail,
-.inputPwd {
+.email,
+.pwd {
   padding: 20px;
 }

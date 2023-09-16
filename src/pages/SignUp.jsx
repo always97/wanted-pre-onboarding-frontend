@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SignUp.module.css";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, Card, TextField } from "@mui/material";
 import { signUpAPI } from "../apis/apis";
 
 const SignUp = () => {
@@ -40,36 +40,36 @@ const SignUp = () => {
     <div className={styles.main}>
       <h2>회원가입페이지</h2>
       <form onSubmit={handleSignUp}>
-        <div className={styles.email}>
-          <label htmlFor="email">이메일</label>
-          <TextField
-            variant="outlined"
-            type="email"
-            id="email"
-            label="email을 입력해주세요"
-            data-testid="email-input"
-            onChange={handleInputEmail}
-          />
-          {isEmailValid === false && (
-            <p style={{ color: "red" }}>
-              유효한 이메일 형식이 아닙니다. ('@' 포함 필수)
-            </p>
-          )}
-        </div>
-        <div className={styles.pwd}>
-          <label htmlFor="password">비밀번호</label>
-          <TextField
-            id="Password"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-            data-testid="password-input"
-            onChange={handleInputPwd}
-          />
-          {isPasswordValid === false && (
-            <p style={{ color: "red" }}>비밀번호는 8자 이상이어야 합니다.</p>
-          )}
-        </div>
+        <Card sx={{ minWidth: 400 }}>
+          <Box className={styles.email}>
+            <TextField
+              variant="outlined"
+              type="email"
+              id="email"
+              label="email을 입력해주세요"
+              data-testid="email-input"
+              onChange={handleInputEmail}
+            />
+            {isEmailValid === false && (
+              <p style={{ color: "red" }}>
+                유효한 이메일 형식이 아닙니다. ('@' 포함 필수)
+              </p>
+            )}
+          </Box>
+          <Box className={styles.pwd}>
+            <TextField
+              id="Password"
+              label="Password를 입력해주세요."
+              type="password"
+              autoComplete="current-password"
+              data-testid="password-input"
+              onChange={handleInputPwd}
+            />
+            {isPasswordValid === false && (
+              <p style={{ color: "red" }}>비밀번호는 8자 이상이어야 합니다.</p>
+            )}
+          </Box>
+        </Card>
         <Button
           variant="outlined"
           type="submit"
@@ -78,7 +78,7 @@ const SignUp = () => {
         >
           가입하기
         </Button>
-        <Button variant="outlined" onClick={() => navigate("/signip")}>
+        <Button variant="outlined" onClick={() => navigate("/signin")}>
           로그인으로 이동
         </Button>
       </form>

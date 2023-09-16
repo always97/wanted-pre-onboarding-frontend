@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Todo.module.css";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, Card, Checkbox, TextField } from "@mui/material";
 const Todo = (props) => {
   const { todoId, text, isCompleted, userId, onDeleteTodo, onUpdateTodo } =
     props;
@@ -55,7 +55,7 @@ const Todo = (props) => {
       {toggleEdit ? (
         <>
           <label>
-            <input
+            <Checkbox
               type="checkbox"
               checked={todoInfo.isCompleted}
               onChange={handleCheck}
@@ -68,29 +68,47 @@ const Todo = (props) => {
             />
           </label>
           <div className={styles.btnBox}>
-            <button data-testid="modify-button" onClick={handleUpdate}>
+            <Button
+              variant="outlined"
+              data-testid="modify-button"
+              onClick={handleUpdate}
+            >
               제출
-            </button>
-            <button data-testid="delete-button" onClick={handleCancle}>
+            </Button>
+            <Button
+              variant="outlined"
+              data-testid="delete-button"
+              onClick={handleCancle}
+            >
               취소
-            </button>
+            </Button>
           </div>
         </>
       ) : (
         <>
-          <label>
-            <input
+          <Box sx={{ display: "flex" }}>
+            <Checkbox
               type="checkbox"
               checked={todoInfo.isCompleted}
               onChange={handleCheck}
             />
-            <span>{todoInfo.text}</span>
-          </label>
+            <Card variant="outlined" sx={{ minWidth: 100 }}>
+              {todoInfo.text}
+            </Card>
+          </Box>
           <div className={styles.btnBox}>
-            <Button data-testid="modify-button" onClick={toggleEditMode}>
+            <Button
+              variant="outlined"
+              data-testid="modify-button"
+              onClick={toggleEditMode}
+            >
               수정
             </Button>
-            <Button data-testid="delete-button" onClick={handleDelete}>
+            <Button
+              variant="outlined"
+              data-testid="delete-button"
+              onClick={handleDelete}
+            >
               삭제
             </Button>
           </div>
