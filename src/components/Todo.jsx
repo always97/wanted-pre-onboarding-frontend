@@ -65,19 +65,20 @@ const Todo = (props) => {
               type="text"
               value={curText}
               onChange={handleText}
+              data-testid="modify-input"
             />
           </label>
           <div className={styles.btnBox}>
             <Button
               variant="outlined"
-              data-testid="modify-button"
+              data-testid="submit-button"
               onClick={handleUpdate}
             >
               제출
             </Button>
             <Button
               variant="outlined"
-              data-testid="delete-button"
+              data-testid="cancel-button"
               onClick={handleCancle}
             >
               취소
